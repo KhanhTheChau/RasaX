@@ -1,0 +1,108 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- ask_name
+- chi_tieu
+- chuong_trinh_dao_tao
+- diem_chuan_va_truong
+- goodbye
+- greet
+- help
+- hobby
+- hoc_phi
+- hoc_phi_va_diem_chuan
+- info_majors
+- nganhA_dao_tao
+- review_truong
+- thank
+- to_hop_mon
+- tu_van
+- where_truong
+entities:
+- majors
+- university
+- name
+- hobby
+- block
+slots:
+  majors:
+    type: text
+    influence_conversation: true
+  university:
+    type: text
+    influence_conversation: true
+  name:
+    type: text
+    influence_conversation: true
+  hobby:
+    type: text
+    influence_conversation: true
+  block:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: '{}'
+  utter_goodbye:
+  - text: Bye
+  utter_thank:
+  - text: Không có gì
+  utter_ask_name:
+  - text: Chào {name}! Mình là chatbot tư vấn nghề nghiệp, bạn cần mình giúp gì?
+  utter_help:
+  - text: Mình là chatbot tư vấn giáo dục!
+  utter_tu_van:
+  - text: Tôi có thể trả lời bất kì câu hỏi nào đấy?
+  utter_hobby:
+  - text: 'Các trường đào tạo ngành {hobby}: Đại học Bách Khoa, Đại học Khoa học tự nhiên, Đại học fpt, Đại học Cần Thơ, Đại học Tôn Đức Thắng, ...'
+  utter_info_majors:
+  - text: '{}'
+  utter_diem_chuan_va_truong:
+  - text: '{}'
+  utter_hoc_phi:
+  - text: Hiện nay học phí ngành {majors} là 16 triệu.
+  utter_hoc_phi_va_diem_chuan:
+  - text: Vui lòng cung cấp thông tin trường và ngành cho tôi.
+  utter_default:
+  - text: '{}'
+  utter_to_hop_mon:
+  - text: '{}'
+  utter_chuong_trinh_dao_tao:
+  - text: 'Tham khảo khung chương trình đào tạo {majors} {university} ở link: https://www.ctu.edu.vn/webctu_program'
+  utter_nganhA_dao_tao:
+  - text: '{}'
+  utter_chi_tieu:
+  - text: '{majors} ở {university} năm nay lấy chỉ tiêu là 60'
+  utter_review_truong:
+  - text: '{}'
+  utter_where_truong:
+  - text: 'Địa chỉ trường {university}: @Khu 1: đường 30/4, phường Hưng Lợi, quận Ninh Kiều, TP Cần Thơ; @Khu 2: đường 3/2, phường Xuân Khánh, quận Ninh Kiều, TP Cần Thơ; @Khu 3: số 1 đường Lý Tự Trọng, phường An Phú, quận Ninh Kiều, TP Cần Thơ; @Khu quân sự Hòa An: 554 Quốc lộ 61, Ấp Hòa Đức, Xã Hòa An, Huyện Phụng Hiệp, Hậu Giang'
+actions:
+- utter_greet
+- utter_goodbye
+- utter_default
+- utter_thank
+- utter_ask_name
+- utter_help
+- utter_tu_van
+- utter_hobby
+- utter_info_majors
+- utter_diem_chuan_va_truong
+- utter_hoc_phi
+- utter_hoc_phi_va_diem_chuan
+- action_diem_chuan_va_truong
+- utter_to_hop_mon
+- action_to_hop_mon
+- utter_chuong_trinh_dao_tao
+- utter_nganhA_dao_tao
+- action_nganhA_dao_tao
+- action_default_fallback
+- utter_chi_tieu
+- utter_review_truong
+- action_review_truong
+- utter_where_truong
+- action_info_majors
+- action_help
+- action_greet
